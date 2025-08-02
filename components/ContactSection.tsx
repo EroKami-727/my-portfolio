@@ -31,10 +31,9 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    toast.success('Message sent successfully! I\'ll get back to you soon.')
+    toast.success('Message sent successfully! I will get back to you soon.')
     setFormData({ name: '', email: '', message: '' })
     setIsSubmitting(false)
   }
@@ -78,7 +77,6 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -148,7 +146,6 @@ export function ContactSection() {
             </Card>
           </motion.div>
 
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

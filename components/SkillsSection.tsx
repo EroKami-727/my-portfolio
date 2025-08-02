@@ -55,7 +55,6 @@ export function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* Skill Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon
@@ -89,7 +88,6 @@ export function SkillsSection() {
           })}
         </div>
 
-        {/* Progress Bars */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
