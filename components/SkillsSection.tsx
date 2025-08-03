@@ -50,7 +50,7 @@ export function SkillsSection() {
         >
           <h2 className="text-3xl sm:text-4xl mb-4">Skills & Expertise</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm passionate about learning new technologies and constantly improving my skills 
+            I&apos;m passionate about learning new technologies and constantly improving my skills 
             to deliver the best solutions for every project.
           </p>
         </motion.div>

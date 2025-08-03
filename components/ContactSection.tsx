@@ -69,9 +69,9 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl mb-4">Let's Work Together</h2>
+          <h2 className="text-3xl sm:text-4xl mb-4">Let&apos;s Work Together</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Send me a message and let's discuss 
+            Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s discuss 
             how we can bring your ideas to life.
           </p>
         </motion.div>
@@ -156,7 +156,7 @@ export function ContactSection() {
             <div>
               <h3 className="text-2xl mb-4">Get in touch</h3>
               <p className="text-muted-foreground mb-8">
-                I'm always interested in new opportunities and exciting projects. 
+                I&apos;m always interested in new opportunities and exciting projects. 
                 Whether you have a question or just want to say hi, feel free to reach out!
               </p>
             </div>
