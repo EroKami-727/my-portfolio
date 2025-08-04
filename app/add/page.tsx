@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider' // Corrected path
 import { Toaster } from '@/components/ui/sonner'
 
 export default async function AddPage() {
-  const cookieStore = cookies() // No await needed here, but good practice
+  const cookieStore = await cookies() // Added await here
   const isAuthenticated = cookieStore.get('admin-auth')?.value === 'true'
 
   if (!isAuthenticated) {
