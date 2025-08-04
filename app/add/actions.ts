@@ -9,6 +9,13 @@ import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage
 
 const GITHUB_PLACEHOLDER = 'coming-soon';
 
+// Define proper types
+interface ActionState {
+  success?: boolean;
+  error?: string;
+  message?: string;
+}
+
 // --- AUTH ACTION ---
 // Corrected
 export async function handleLogin(password: string) {
@@ -24,6 +31,7 @@ export async function handleLogin(password: string) {
     }
     return { success: false, error: 'Invalid password.' }
   }
+
 // --- DATA FETCHING ACTION ---
 export async function getProjects() {
   const projectsCol = collection(db, 'projects');
@@ -34,7 +42,7 @@ export async function getProjects() {
 }
 
 // --- DATA MUTATION ACTIONS ---
-export async function handleProjectAction(prevState: any, formData: FormData) {
+export async function handleProjectAction(prevState: ActionState | null, formData: FormData): Promise<ActionState> {
   const action = formData.get('action') as string;
   
   if (action === 'add') return handleAddProject(formData);
@@ -43,7 +51,7 @@ export async function handleProjectAction(prevState: any, formData: FormData) {
   return { success: false, error: 'Invalid action.' };
 }
 
-async function handleAddProject(formData: FormData) {
+async function handleAddProject(formData: FormData): Promise<ActionState> {
   try {
     const projectData = await prepareProjectData(formData);
     await addDoc(collection(db, 'projects'), projectData);
@@ -55,7 +63,7 @@ async function handleAddProject(formData: FormData) {
   }
 }
 
-async function handleUpdateProject(formData: FormData) {
+async function handleUpdateProject(formData: FormData): Promise<ActionState> {
   const id = formData.get('id') as string;
   if (!id) return { success: false, error: 'Project ID is missing.' };
 
@@ -71,7 +79,7 @@ async function handleUpdateProject(formData: FormData) {
   }
 }
 
-export async function handleDeleteProject(id: string, imageUrl?: string) {
+export async function handleDeleteProject(id: string, imageUrl?: string): Promise<ActionState> {
   try {
     // Delete image from storage if it exists
     if (imageUrl) {
