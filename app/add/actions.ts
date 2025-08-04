@@ -20,7 +20,7 @@ interface ActionState {
 // Corrected
 export async function handleLogin(password: string) {
     if (password === process.env.ADMIN_PASSWORD) {
-      const cookieStore = cookies() // Get the cookie store
+      const cookieStore = await cookies() // Get the cookie store
       cookieStore.set('admin-auth', 'true', { // Then use it
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
