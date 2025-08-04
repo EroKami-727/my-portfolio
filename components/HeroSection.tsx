@@ -27,7 +27,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             Hi, I&apos;m{' '}
-            <span className="text-primary">Alex</span>
+            <span className="text-primary">Harsha</span>
           </motion.h1>
           
           <motion.p 
